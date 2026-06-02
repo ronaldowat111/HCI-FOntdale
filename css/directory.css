@@ -10,8 +10,8 @@
 .dir-bar .lvl{ color:var(--gold); letter-spacing:.08em; }
 .dir-body{ display:grid; grid-template-columns:1fr 1fr; gap:22px; margin-top:22px; }
 .dir-card{ background:var(--soft); border:1px solid var(--line); border-radius:6px; padding:26px; }
-.store-grid{ display:grid; grid-template-columns:repeat(3,1fr); gap:14px; }
-.store-btn{ font-family:var(--display); font-size:.92rem; letter-spacing:.05em; background:var(--paper-pure); border:1px solid var(--line); border-radius:5px; padding:20px 8px; text-align:center; cursor:pointer; color:var(--ink-soft); transition:.25s var(--ease); }
+.store-grid{ display:flex; flex-wrap:wrap; gap:14px; }
+.store-btn{ flex:1 1 120px; min-width:120px; font-family:var(--display); font-size:.92rem; letter-spacing:.05em; background:var(--paper-pure); border:1px solid var(--line); border-radius:5px; padding:22px 10px; text-align:center; cursor:pointer; color:var(--ink-soft); transition:.25s var(--ease); }
 .store-btn:hover{ border-color:var(--gold); }
 .store-btn.active{ border-color:var(--gold); background:#faf3e4; color:var(--ink); box-shadow:0 0 0 1px var(--gold) inset; }
 .zone-row{ display:flex; gap:12px; margin-top:24px; padding-top:22px; border-top:1px solid var(--line); }
@@ -30,7 +30,7 @@
 }
 @media screen and (max-width:540px){
   .dir-bar{ flex-direction:column; gap:8px; text-align:center; padding:16px; }
-  .store-grid{ grid-template-columns:repeat(2,1fr); }
+  .store-btn{ flex-basis:40%; }
   .zone-row{ flex-direction:column; }
   .dir-card{ padding:18px; }
 }

@@ -44,8 +44,8 @@
             <li>New tenant announcements</li>
           </ul>
           <figure class="news-figure">
-            <!-- PLACEHOLDER IMAGE: replace with real Fontdale lifestyle photo from Figma -->
-            <img src="https://picsum.photos/seed/fontdale-news/720/520" alt="Fontdale newsletter">
+            <!-- ASSET: assets/staywithus.png -->
+            <img src="assets/staywithus.png" alt="Fontdale community">
           </figure>
         </div>
 
@@ -73,8 +73,28 @@
               <small class="err" id="err-phone"></small>
             </div>
 
-            
-           
+            <div class="field">
+              <label for="topic">Topic of Interest</label>
+              <select id="topic" name="topic">
+                <option value="">Choose a topic…</option>
+                <option value="fashion">Fashion &amp; Apparel</option>
+                <option value="dining">Dining &amp; Cafés</option>
+                <option value="events">Events &amp; Festivals</option>
+                <option value="lifestyle">Lifestyle &amp; Home</option>
+              </select>
+              <small class="err" id="err-topic"></small>
+            </div>
+
+            <div class="field">
+              <span class="field-label">Update Preference</span>
+              <div class="radio-row" id="frequency-group">
+                <label class="radio"><input type="radio" name="frequency" value="daily"> Daily</label>
+                <label class="radio"><input type="radio" name="frequency" value="weekly"> Weekly</label>
+                <label class="radio"><input type="radio" name="frequency" value="monthly"> Monthly</label>
+              </div>
+              <small class="err" id="err-frequency"></small>
+            </div>
+
             <button type="submit" class="btn btn-primary news-submit">Subscribe</button>
 
             <p class="form-success" id="form-success" hidden>✓ Thank you! You are now subscribed to the Fontdale newsletter.</p>
