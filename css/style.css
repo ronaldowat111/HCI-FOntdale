@@ -1,0 +1,122 @@
+/* ============================================================
+   FONTDALE — shared base stylesheet
+   Used by every page. Page-specific rules live in their own files.
+   ============================================================ */
+
+/* ---------- DESIGN TOKENS ---------- */
+:root{
+  --paper:#fbfaf6; --paper-pure:#ffffff;
+  --ink:#141312; --ink-soft:#2c2a27;
+  --gold:#c19a4d; --gold-deep:#a9853c;
+  --muted:#767676; --line:#e6e2d8;
+  --soft:#efece4;            /* light card / button fill */
+  --footer:#141312;
+  --ok:#2f7d52; --err:#b23b3b;
+  --display:"Bodoni Moda", Georgia, serif;
+  --body:"EB Garamond", Georgia, serif;
+  --maxw:1240px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+
+*{ box-sizing:border-box; margin:0; padding:0; }
+html{ scroll-behavior:smooth; }
+body{
+  font-family:var(--body); background:var(--paper); color:var(--ink);
+  font-size:18px; line-height:1.6; -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+img{ display:block; max-width:100%; }
+a{ color:inherit; text-decoration:none; }
+.wrap{ width:100%; max-width:var(--maxw); margin-inline:auto; padding-inline:32px; }
+
+.eyebrow{
+  font-family:var(--display); font-style:italic; font-size:1rem;
+  letter-spacing:.1em; color:var(--gold-deep); display:inline-block;
+  padding-bottom:6px; border-bottom:1px solid var(--gold);
+}
+
+/* ---------- ENTRANCE ANIMATION ---------- */
+@keyframes rise{ from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);} }
+.reveal{ opacity:0; animation:rise .9s var(--ease) forwards; }
+/* Staggered delay utilities — replaces inline style="animation-delay" */
+.d1{ animation-delay:.06s; }
+.d2{ animation-delay:.12s; }
+.d3{ animation-delay:.18s; }
+.d4{ animation-delay:.24s; }
+.d5{ animation-delay:.30s; }
+.d6{ animation-delay:.36s; }
+@media (prefers-reduced-motion:reduce){ .reveal{ animation:none; opacity:1; } }
+
+/* ---------- HEADER / NAV ---------- */
+header{
+  position:sticky; top:0; z-index:50;
+  background:rgba(251,250,246,.86); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--line);
+}
+.nav{ display:flex; align-items:center; justify-content:space-between; height:74px; }
+.brand{ font-family:var(--display); font-weight:500; font-size:1.7rem; letter-spacing:.02em; }
+.menu{ display:flex; gap:34px; align-items:center; }
+.menu a{
+  font-family:var(--display); font-size:1.02rem; color:var(--ink-soft);
+  position:relative; padding-bottom:4px; transition:color .25s var(--ease);
+}
+.menu a::after{ content:""; position:absolute; left:0; bottom:0; height:1.5px; width:0; background:var(--gold); transition:width .3s var(--ease); }
+.menu a:hover{ color:var(--ink); }
+.menu a:hover::after, .menu a.active::after{ width:100%; }
+.menu a.active{ color:var(--ink); }
+.burger{ display:none; background:none; border:0; cursor:pointer; }
+.burger span{ display:block; width:26px; height:1.6px; background:var(--ink); margin:6px 0; transition:.3s; }
+
+/* ---------- BUTTONS (shared) ---------- */
+.btn{
+  font-family:var(--display); text-transform:uppercase; letter-spacing:.14em; font-size:.82rem;
+  cursor:pointer; transition:.3s var(--ease); display:inline-flex; align-items:center; justify-content:center;
+}
+.btn-primary{ background:var(--ink); color:var(--paper); padding:18px 34px; border:1px solid var(--ink); }
+.btn-primary:hover{ background:transparent; color:var(--ink); }
+.btn-outline{ background:transparent; color:var(--ink); border:1px solid var(--ink); padding:18px 26px; }
+.btn-outline:hover{ background:var(--ink); color:var(--paper); }
+
+/* ---------- PAGE HEAD (inner pages) ---------- */
+.page-head{ text-align:center; padding:78px 0 40px; }
+.page-head h1{ font-family:var(--display); font-weight:500; font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.08; margin-top:16px; }
+
+/* ---------- FOOTER ---------- */
+footer{ background:var(--footer); color:#cfcabd; padding:72px 0 40px; }
+.foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.1); }
+.foot-brand{ font-family:var(--display); font-size:2.1rem; color:var(--gold); font-weight:500; }
+.foot-col h4{ font-family:var(--display); text-transform:uppercase; letter-spacing:.14em; font-size:.72rem; color:#8d877a; margin-bottom:18px; font-weight:500; }
+.foot-col a{ display:block; font-size:.95rem; margin-bottom:12px; color:#cfcabd; transition:color .25s var(--ease); }
+.foot-col a:hover{ color:var(--gold); }
+.foot-contact{ font-size:.95rem; }
+.foot-contact .row{ display:flex; align-items:center; gap:10px; margin-bottom:14px; }
+.foot-contact svg{ width:18px; height:18px; stroke:var(--gold); fill:none; flex-shrink:0; }
+.foot-bottom{ padding-top:28px; font-size:.8rem; letter-spacing:.08em; color:#7a7568; text-transform:uppercase; }
+
+/* ---------- RESPONSIVE (shared) ---------- */
+@media (max-width:980px){
+  .foot-grid{ grid-template-columns:1fr 1fr; gap:32px; }
+}
+@media (max-width:620px){
+  body{ font-size:17px; } .wrap{ padding-inline:22px; }
+  .menu{
+    position:fixed; inset:74px 0 auto 0; flex-direction:column; gap:0; background:var(--paper);
+    border-bottom:1px solid var(--line); transform:translateY(-140%); transition:transform .4s var(--ease); padding:10px 22px 22px;
+  }
+  .menu.open{ transform:translateY(0); }
+  .menu a{ padding:14px 0; width:100%; border-bottom:1px solid var(--line); }
+  .burger{ display:block; }
+  .foot-grid{ grid-template-columns:1fr; }
+}
+
+/* ---------- RESPONSIVE — small phones (required: below 540px) ---------- */
+@media screen and (max-width:540px){
+  body{ font-size:16px; }
+  .wrap{ padding-inline:16px; }
+  .brand{ font-size:1.45rem; }
+  .page-head{ padding:52px 0 28px; }
+  .page-head h1{ font-size:2.1rem; }
+  .btn{ width:100%; }
+  footer{ padding:52px 0 32px; }
+  .foot-brand{ font-size:1.8rem; }
+}
