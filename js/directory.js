@@ -1,19 +1,18 @@
-// Directory tenants grouped by zone (matches the Figma directory).
-// img = real photo when available, s = picsum seed fallback.
+// Data tenant per zona
 const zones = [
   {
     name: "North Gallery",
     tenants: [
       { n: "Hastala", c: "Fashion & Apparel", d: "Trend-led pieces refreshed weekly, right by the north entrance.", img: "assets/Hastala.png" },
-      { n: "Vista", c: "Lifestyle & Home", d: "Lighting, décor, and curated home goods with a warm feel.", img: "assets/Vista.png" },
+      { n: "Vista", c: "Photo studio", d: "Capture special moments with your loved ones.", img: "assets/Vista.png" },
     ],
   },
   {
     name: "Lumen Skywalk",
     tenants: [
-      { n: "H&N", c: "Fashion", d: "Everyday essentials and seasonal looks for the whole family.", s: "hn-store" },
+      { n: "H&N", c: "Fashion", d: "Everyday essentials and seasonal looks for the whole family.", img: "assets/h&n.png" },
       { n: "PFC", c: "Fast Food Restaurant", d: "Crispy fried chicken and quick bites in the food court.", img: "assets/PFC.png" },
-      { n: "Zahra", c: "Fast Fashion", d: "Trend-led, budget-friendly fashion for every day.", s: "zahra" },
+      { n: "Zahra", c: "Fast Fashion", d: "Trend-led, budget-friendly fashion for every day.", img: "assets/Zahra.png" },
       { n: "ZoneTime", c: "Arcade Games", d: "Classic and modern arcade machines for all ages.", img: "assets/ZoneTime.png" },
       { n: "Uniklo", c: "Fashion Store", d: "Everyday basics and seasonal essentials for the whole family.", img: "assets/uniklo.png" },
       { n: "Ikan Bakar Pak Sugeng", c: "Seafood Restaurant", d: "Charcoal-grilled seafood and Indonesian favorites.", img: "assets/ikanbakarpaksugeng.png" },
@@ -22,7 +21,7 @@ const zones = [
   {
     name: "South Pavilion",
     tenants: [
-      { n: "Cinema 67", c: "Cinema & Entertainment", d: "Seven screens with premium recliner seating.", img: "assets/cinema.jpg" },
+      { n: "Cinema 67", c: "Cinema & Entertainment", d: "Seven screens with premium recliner seating.", img: "assets/cinema.png" },
     ],
   },
 ];

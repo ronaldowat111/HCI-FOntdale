@@ -1,4 +1,4 @@
-// Newsletter form validation. No regex here on purpose — just string checks.
+// Validasi form newsletter (tanpa regex)
 (function(){
   const form = document.getElementById('news-form');
   if(!form) return;
@@ -77,13 +77,16 @@
     if(isEmpty(phone)){
       setError('phone', 'Please enter your phone number.');
       ok = false;
-    } else if(!onlyPhoneChars(phone)){
+    } 
+    else if(!onlyPhoneChars(phone)){
       setError('phone', 'Phone number may contain digits only.');
       ok = false;
-    } else if(digitCount(phone) < 8 || digitCount(phone) > 15){
+    } 
+    else if(digitCount(phone) < 8 || digitCount(phone) > 15){
       setError('phone', 'Phone number must be 8–15 digits.');
       ok = false;
-    } else {
+    } 
+    else{
       setError('phone', '');
     }
 
@@ -92,7 +95,9 @@
       if(isEmpty(topicEl.value)){
         setError('topic', 'Please choose a topic of interest.');
         ok = false;
-      } else {
+      } 
+      else 
+        {
         setError('topic', '');
       }
     }
@@ -102,7 +107,8 @@
       if(!freq){
         setError('frequency', 'Please choose how often you want updates.');
         ok = false;
-      } else {
+      } 
+      else{
         setError('frequency', '');
       }
     }
@@ -114,7 +120,7 @@
     }
   });
 
-  // clear a field's error once the user starts fixing it
+  // Hapus pesan error 
   function clearError(e){
     const t = e.target;
     if(t.name === 'frequency'){

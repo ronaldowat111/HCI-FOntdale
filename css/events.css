@@ -1,8 +1,6 @@
-/* ============================================================
-   FONTDALE — Events page styles
-   ============================================================ */
 
-/* ---------- EVENTS ---------- */
+
+/* ===== Events ===== */
 .events-tab{
   display:block; width:max-content; margin:0 auto 48px;
   background:var(--ink); color:var(--paper);
@@ -25,7 +23,7 @@
   border:1px solid var(--line); border-radius:8px;
 }
 .event-row:hover .cal{ border-color:var(--gold); }
-.event-row .cal svg{ width:26px; height:26px; stroke:var(--ink); fill:none; }
+.event-row .cal .ico{ width:26px; height:26px; background-color:var(--ink); }
 .event-row .info{ flex:1; text-align:center; }
 .event-row h3{ font-family:var(--display); font-weight:500; font-size:1.3rem; }
 .event-row .pill{
@@ -44,7 +42,7 @@
 .event-feature .cap .d{ font-style:italic; color:var(--gold-deep); font-size:.95rem; margin-top:4px; }
 .event-feature .cap .ev-desc{ margin-top:10px; }
 
-/* ---------- RESPONSIVE ---------- */
+/* ===== Responsif ===== */
 @media (max-width:980px){
   .events-layout{ grid-template-columns:1fr; }
   .event-feature img{ height:320px; }

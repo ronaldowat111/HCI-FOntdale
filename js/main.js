@@ -1,4 +1,4 @@
-// Mobile menu toggle.
+// Toggle menu mobile
 (function(){
   const burger = document.getElementById('burger');
   const menu = document.getElementById('menu');

@@ -1,10 +1,8 @@
-/* ============================================================
-   FONTDALE — Newsletter page styles
-   ============================================================ */
+/* Gaya halaman Newsletter */
 
 .news-layout{ display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; padding-bottom:100px; }
 
-/* ---------- LEFT: intro ---------- */
+/* ===== Kiri: intro ===== */
 .news-intro h2{ font-family:var(--display); font-weight:500; font-size:clamp(1.7rem,3vw,2.4rem); margin-bottom:18px; }
 .news-intro p{ color:var(--ink-soft); margin-bottom:22px; }
 .news-perks{ list-style:none; margin:0 0 28px; }
@@ -12,7 +10,7 @@
 .news-perks li::before{ content:""; position:absolute; left:0; top:.55em; width:10px; height:10px; border:1px solid var(--gold); background:var(--gold); border-radius:50%; }
 .news-figure img{ width:100%; height:340px; object-fit:cover; border-radius:6px; }
 
-/* ---------- RIGHT: form card ---------- */
+/* ===== Kanan: form ===== */
 .news-card{ background:var(--soft); border:1px solid var(--line); border-radius:10px; padding:38px 34px; }
 .news-card h3{ font-family:var(--display); font-weight:500; font-size:1.6rem; margin-bottom:24px; }
 
@@ -31,12 +29,12 @@
 .news-form input.invalid,
 .news-form select.invalid{ border-color:var(--err); box-shadow:0 0 0 1px var(--err) inset; }
 
-/* radio group */
+/* Grup radio */
 .radio-row{ display:flex; gap:22px; flex-wrap:wrap; padding-top:2px; }
 .radio{ display:inline-flex; align-items:center; gap:8px; font-family:var(--body); cursor:pointer; }
 .radio input{ accent-color:var(--gold-deep); width:16px; height:16px; cursor:pointer; }
 
-/* error + success feedback */
+/* Pesan error & sukses */
 .err{ display:block; min-height:1.1em; margin-top:6px; font-size:.85rem; font-style:italic; color:var(--err); }
 .news-submit{ width:100%; margin-top:6px; }
 .form-success{
@@ -44,7 +42,7 @@
   background:rgba(47,125,82,.08); color:var(--ok); font-size:.98rem; text-align:center;
 }
 
-/* ---------- RESPONSIVE ---------- */
+/* ===== Responsif ===== */
 @media (max-width:980px){
   .news-layout{ grid-template-columns:1fr; gap:40px; }
 }

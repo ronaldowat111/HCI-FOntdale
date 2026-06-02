@@ -1,4 +1,4 @@
-// Tenant carousel on the home page.
+// Carousel tenant
 (function(){
   const track = document.getElementById('tenant-track');
   const prev = document.getElementById('tenant-prev');
