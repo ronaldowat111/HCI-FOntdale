@@ -1,6 +1,6 @@
 /* Gaya dasar bersama — dipakai semua halaman */
 
-/* ===== Token desain ===== */
+/* Token desain */
 :root{
   --paper:#fbfaf6; --paper-pure:#ffffff;
   --ink:#141312; --ink-soft:#2c2a27;
@@ -32,7 +32,7 @@ a{ color:inherit; text-decoration:none; }
   padding-bottom:6px; border-bottom:1px solid var(--gold);
 }
 
-/* ===== Animasi masuk ===== */
+/* Animasi masuk */
 @keyframes rise{ from{opacity:0; transform:translateY(22px);} to{opacity:1; transform:translateY(0);} }
 .reveal{ opacity:0; animation:rise .9s var(--ease) forwards; }
 /* Jeda animasi bertahap */
@@ -44,7 +44,7 @@ a{ color:inherit; text-decoration:none; }
 .d6{ animation-delay:.36s; }
 @media (prefers-reduced-motion:reduce){ .reveal{ animation:none; opacity:1; } }
 
-/* ===== Header / Navigasi ===== */
+/* Header / Navigasi */
 header{
   position:sticky; top:0; z-index:50;
   background:rgba(251,250,246,.86); backdrop-filter:blur(8px);
@@ -64,7 +64,7 @@ header{
 .burger{ display:none; background:none; border:0; cursor:pointer; }
 .burger span{ display:block; width:26px; height:1.6px; background:var(--ink); margin:6px 0; transition:.3s; }
 
-/* ===== Tombol ===== */
+/* Tombol */
 .btn{
   font-family:var(--display); text-transform:uppercase; letter-spacing:.14em; font-size:.82rem;
   cursor:pointer; transition:.3s var(--ease); display:inline-flex; align-items:center; justify-content:center;
@@ -74,11 +74,11 @@ header{
 .btn-outline{ background:transparent; color:var(--ink); border:1px solid var(--ink); padding:18px 26px; }
 .btn-outline:hover{ background:var(--ink); color:var(--paper); }
 
-/* ===== Judul halaman ===== */
+/* Judul halaman */
 .page-head{ text-align:center; padding:78px 0 40px; }
 .page-head h1{ font-family:var(--display); font-weight:500; font-size:clamp(2.4rem,4.6vw,4rem); line-height:1.08; margin-top:16px; }
 
-/* ===== Ikon ===== */
+/* Ikon */
 .ico{
   display:inline-block; flex-shrink:0; width:20px; height:20px;
   background-color:currentColor;
@@ -91,7 +91,7 @@ header{
 .ico-arrow-left{ -webkit-mask-image:url(../assets/icons/chevron-left.svg); mask-image:url(../assets/icons/chevron-left.svg); }
 .ico-arrow-right{ -webkit-mask-image:url(../assets/icons/chevron-right.svg); mask-image:url(../assets/icons/chevron-right.svg); }
 
-/* ===== Footer ===== */
+/* Footer */
 footer{ background:var(--footer); color:#cfcabd; padding:72px 0 40px; }
 .foot-grid{ display:grid; grid-template-columns:1.4fr 1fr 1fr 1.1fr; gap:40px; padding-bottom:48px; border-bottom:1px solid rgba(255,255,255,.1); }
 .foot-brand{ font-family:var(--display); font-size:2.1rem; color:var(--gold); font-weight:500; }
@@ -103,7 +103,7 @@ footer{ background:var(--footer); color:#cfcabd; padding:72px 0 40px; }
 .foot-contact .ico{ width:18px; height:18px; background-color:var(--gold); }
 .foot-bottom{ padding-top:28px; font-size:.8rem; letter-spacing:.08em; color:#7a7568; text-transform:uppercase; }
 
-/* ===== Responsif ===== */
+/* Responsif */
 @media (max-width:980px){
   .foot-grid{ grid-template-columns:1fr 1fr; gap:32px; }
 }
@@ -119,7 +119,7 @@ footer{ background:var(--footer); color:#cfcabd; padding:72px 0 40px; }
   .foot-grid{ grid-template-columns:1fr; }
 }
 
-/* ===== Responsif — HP kecil (di bawah 540px) ===== */
+/* Responsif — HP kecil (di bawah 540px) */
 @media screen and (max-width:540px){
   body{ font-size:16px; }
   .wrap{ padding-inline:16px; }

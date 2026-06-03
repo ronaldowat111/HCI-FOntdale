@@ -1,6 +1,6 @@
 
 
-/* ===== Events ===== */
+/* Events */
 .events-tab{
   display:block; width:max-content; margin:0 auto 48px;
   background:var(--ink); color:var(--paper);
@@ -42,7 +42,7 @@
 .event-feature .cap .d{ font-style:italic; color:var(--gold-deep); font-size:.95rem; margin-top:4px; }
 .event-feature .cap .ev-desc{ margin-top:10px; }
 
-/* ===== Responsif ===== */
+/* Responsif */
 @media (max-width:980px){
   .events-layout{ grid-template-columns:1fr; }
   .event-feature img{ height:320px; }
